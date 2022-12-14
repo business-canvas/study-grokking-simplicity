@@ -1,13 +1,19 @@
 // action
-const shopping_cart = []
+let shopping_cart = []
 // action
 let shopping_cart_total = 0
 
 // action
 function add_item_to_cart(name, price) {
-  shopping_cart.push({ name, price })
-
+  shopping_cart = add_item(shopping_cart, name, price)
   calc_cart_total()
+}
+
+// calculation
+function add_item(cart, name, price) {
+  const new_cart = cart.slice()
+  new_cart.push({ name, price })
+  return new_cart
 }
 
 // action
