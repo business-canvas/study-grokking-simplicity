@@ -22,12 +22,17 @@ function update_shpping_icons() {
   for (let i = 0; i < buy_buttons.length; i++) {
     const button = buy_buttons[i]
     const item = button.item
-    if (item.price + shopping_cart_total >= 20) {
+    if (gets_free_shipping(shopping_cart_total, item.price)) {
       button.show_free_shipping_icon()
     } else {
       button.hide_free_shipping_icon()
     }
   }
+}
+
+// calculation
+function gets_free_shipping(total, item_price) {
+  return item_price + total >= 20
 }
 
 // action
