@@ -32,7 +32,11 @@ function update_shpping_icons() {
 
 // action
 function update_tax_dom() {
-  set_tax_dom(shopping_cart_total * 0.1)
+  set_tax_dom(calc_tax(shopping_cart_total))
+}
+
+function calc_tax(amount) {
+  return amount * 0.1
 }
 
 // action
